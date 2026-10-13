@@ -7,7 +7,7 @@ test('loads the landing page without browser errors', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
-  await expect(page).toHaveTitle('ODE — Good data. Real impact. Anywhere.');
+  await expect(page).toHaveTitle('ODE - Good data. Real impact. Anywhere.');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Good data.Real impact.Anywhere.',
   );
