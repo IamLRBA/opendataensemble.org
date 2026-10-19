@@ -31,20 +31,39 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const museoModerno = localFont({
-  src: './fonts/MuseoModerno-Variable.ttf',
-  weight: '100 900',
+const inter = localFont({
+  src: [
+    {
+      path: './fonts/InterVariable.woff2',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: './fonts/InterVariable-Italic.woff2',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
   display: 'swap',
-  variable: '--font-museo-moderno',
+  variable: '--font-inter',
+  fallback: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    'sans-serif',
+  ],
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={museoModerno.variable}
-      data-scroll-behavior="smooth"
-    >
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
       <body>
         <a className="skip-link" href="#main">
           Skip to content

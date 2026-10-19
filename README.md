@@ -67,7 +67,7 @@ Tests automatically start and stop a local preview of `out/` if one isn't alread
 
 - Product copy follows this repository's offline-first, clearinghouse architecture. Documentation and community links use the public ODE website and GitHub.
 - The interactive demo is a **simulation**, not a Formulus session. Sample observations live in React state only. Closing the dialog discards them; no observations are persisted or transmitted.
-- Brand treatment and globe artwork are custom SVGs. MuseoModerno is stored in `app/fonts` and served by this site; there are no runtime font services, trackers, API keys, or analytics.
+- Brand treatment and globe artwork are custom SVGs. Inter is stored in `app/fonts` and served by this site; there are no runtime font services, trackers, API keys, or analytics.
 - Native dialogs and disclosure elements, accessible tabs, visible focus states, mobile navigation, a skip link, and reduced-motion styles are included.
 - `pnpm build` writes static HTML, CSS, and JS to `out/`. Serve that folder with `pnpm start`, or deploy it to GitHub Pages.
 
