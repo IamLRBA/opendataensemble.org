@@ -4,6 +4,7 @@ import { useRef, useState, type KeyboardEvent } from 'react';
 import FieldGlobe from './FieldGlobe';
 import Demo from './Demo';
 import EventTeaser from './EventTeaser';
+import Testimonials from './Testimonials';
 import { BrandMark, Icon, type IconName } from './Icons';
 import LinkList from './LinkList';
 import { asset } from './asset';
@@ -541,63 +542,16 @@ export default function Home() {
               <Icon name="diagonal" size="var(--icon-size-site-17)" />
             </a>
           </div>
-          <div className="workflow-art">
-            <span className="workflow-art-grid" aria-hidden="true" />
-            <img
-              key={activeWorkflow}
-              className="workflow-mascot"
-              src={asset(
-                [
-                  '/brand/field.png',
-                  '/brand/developer.png',
-                  '/brand/planner.png',
-                ][activeWorkflow],
-              )}
-              alt=""
-            />
-            <WorkflowPreview active={activeWorkflow} />
-            <span className="workflow-art-note">
-              <span className="status-dot" /> BUILT FOR FIELD WORK
-            </span>
-          </div>
-        </div>
-        <div className="platform-note">
-          <Icon name="code" size="var(--icon-size-site-17)" />
-          <p>
-            Also part of the ensemble.{' '}
-            <a
-              href="https://github.com/OpenDataEnsemble/ode/tree/main/synkronus-portal"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Web Portal <Icon name="diagonal" size="var(--icon-size-xs)" />
-            </a>
-            <span>·</span>
-            <a
-              href="https://github.com/OpenDataEnsemble/ode/tree/main/synkronus-cli"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Command-line tools{' '}
-              <Icon name="diagonal" size="var(--icon-size-xs)" />
-            </a>
-            <span>·</span>
-            <a
-              href="https://opendataensemble.org/docs/getting-started/architecture-overview"
-              target="_blank"
-              rel="noreferrer"
-            >
-              One shared API <Icon name="diagonal" size="var(--icon-size-xs)" />
-            </a>
-          </p>
-        </div>
-      </section>
-      <section
-        className="container section-space page-section"
-        aria-labelledby="more-title"
-      >
-        <div className="section-heading">
-          <div>
+          <LinkList items={moreLinks} />
+        </section>
+        <EventTeaser />
+        <Testimonials />
+        <section
+          className="cta-section"
+          id="get-started"
+          aria-labelledby="cta-title"
+        >
+          <div className="container cta-inner">
             <span className="eyebrow">
               <span className="section-number">02 /</span> GET TO KNOW US
             </span>
