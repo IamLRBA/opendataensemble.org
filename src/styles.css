@@ -1085,6 +1085,8 @@ h2,
   overflow: hidden;
   transform: rotate(-3deg);
   animation: appear var(--duration-site-0-4s) var(--easing-site-ease) both;
+  position: relative;
+  z-index: var(--z-index-site-2);
 }
 .preview-window-top {
   background: var(--color-neutral-white);
@@ -1179,11 +1181,31 @@ h2,
 .platform-note a:hover {
   text-decoration: underline;
 }
-.workflow-panel-1 .workflow-art {
-  background: var(--color-brand-secondary-300);
-}
+.workflow-panel-1 .workflow-art,
 .workflow-panel-2 .workflow-art {
-  background: var(--color-brand-primary-800);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  justify-items: stretch;
+  padding-left: var(--size-18);
+}
+.workflow-panel-1 .workflow-mascot,
+.workflow-panel-2 .workflow-mascot {
+  width: 122%;
+  max-width: none;
+  height: auto;
+  max-height: var(--size-400);
+  object-fit: contain;
+  object-position: left bottom;
+  justify-self: start;
+  z-index: var(--z-index-site-2);
+}
+.workflow-panel-2 .workflow-mascot {
+  margin-left: calc(-1 * var(--size-25));
+}
+.workflow-panel-1 .workflow-preview,
+.workflow-panel-2 .workflow-preview {
+  justify-self: end;
+  align-self: center;
+  z-index: var(--z-index-site-1);
 }
 .sync-diagram {
   padding: var(--size-27) var(--size-23) var(--size-25);
@@ -3476,6 +3498,26 @@ h2,
   .workflow-art {
     padding: var(--spacing-10) var(--size-25) var(--size-50);
   }
+  .workflow-panel-1 .workflow-art,
+  .workflow-panel-2 .workflow-art {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .workflow-panel-1 .workflow-mascot,
+  .workflow-panel-2 .workflow-mascot {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: var(--size-300);
+    object-fit: contain;
+  }
+  .workflow-panel-1 .workflow-preview,
+  .workflow-panel-2 .workflow-preview {
+    margin-inline: var(--size-25);
+    margin-bottom: var(--spacing-5);
+  }
   .product-name {
     margin-bottom: var(--size-25);
   }
@@ -3951,6 +3993,15 @@ h2,
   }
   .workflow-mascot {
     max-height: var(--size-240);
+  }
+  .workflow-panel-1 .workflow-mascot,
+  .workflow-panel-2 .workflow-mascot {
+    width: auto;
+    max-width: 92%;
+    height: auto;
+    max-height: var(--size-240);
+    margin-left: 0;
+    object-fit: contain;
   }
   .hero-avatar {
     width: 32%;
